@@ -14,7 +14,7 @@ const MediaDetailsWrap = styled('div')({
   display: 'flex',
   flexDirection: 'column',
   textAlign: 'center',
-  '> img': {
+  'img': {
     alignSelf: 'center',
     borderRadius: '50%',
     width: 400,
@@ -75,43 +75,36 @@ const MediaDetails: React.FC = () => {
   return (
     <AnimatePresence>
       <MediaDetailsWrap>
+        <Title>{targetMedia.title}</Title>
         <Panel
-          initial="hidden"
-          animate="visible"
           exit="hidden"
-          variants={{
-            hidden: {
-              y: '100%',
-            },
-            visible: {
-              y: 0,
-            },
-          }}
+          initial={{ scale: 0 }}
+          animate={{ rotate: 360, scale: 1 }}
           transition={{
-            ease: [0.23, 0.52, 0.51, 0.93],
+            type: "spring",
+            stiffness: 260,
+            damping: 20
           }}
         >
-          <Title>{targetMedia.title}</Title>
-          {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
           <img src={targetMedia.imgUrl} alt="Media image" />
-          <br />
-          <DetailItem>
-            <b>Overview: </b>
-            <br />
-            {targetMedia.overview}
-          </DetailItem>
-          <br />
-          <DetailItem>
-            <b>Average Vote: </b>
-            <br />
-            {targetMedia.averageVote}
-          </DetailItem>
-          <br />
-          <br />
-          <BackButton onClick={() => history.goBack()}>
-            &#x2190; Back
-          </BackButton>
         </Panel>
+        <br />
+        <DetailItem>
+          <b>Overview: </b>
+          <br />
+          {targetMedia.overview}
+        </DetailItem>
+        <br />
+        <DetailItem>
+          <b>Average Vote: </b>
+          <br />
+          {targetMedia.averageVote}
+        </DetailItem>
+        <br />
+        <br />
+        <BackButton onClick={() => history.goBack()}>
+          &#x2190; Back
+        </BackButton>
       </MediaDetailsWrap>
     </AnimatePresence>
   )
