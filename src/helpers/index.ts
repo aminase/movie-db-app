@@ -1,6 +1,6 @@
 import { slice } from 'lodash'
 import IMedia from '../types/Media'
-import IAxiosResponse from '../styles/AxiosResponse'
+import IAxiosResponse from '../types/AxiosResponse'
 import logo from '../assets/movieDBLogo.png'
 
 const getMediaListFromResponse = (response: IAxiosResponse): IMedia[] => {

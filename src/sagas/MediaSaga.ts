@@ -8,7 +8,7 @@ import {
 } from '../actions/MediaActions'
 import { API_KEY, API_ROOT, MEDIA_TYPES } from '../constants'
 import { getMediaListFromResponse } from '../helpers'
-import IAxiosResponse from '../styles/AxiosResponse'
+import IAxiosResponse from '../types/AxiosResponse'
 
 const MediaSaga = function* () {
   yield all([
