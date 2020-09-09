@@ -1,13 +1,13 @@
 {
-  "name": "cra-template-typescript-redux",
+  "name": "movie-db",
   "version": "0.2.17",
   "license": "MIT",
-  "author": "Alexander Grischuk <alexgrischuk@gmail.com",
+  "author": "aminase",
   "engines": {
     "node": ">=10"
   },
   "main": "template.json",
-  "description": "A quick start Create React App template with React Router, Redux, TypeScript, Enzyme and custom ESlint configurations",
+  "description": "A start of movie DB project",
   "keywords": [
     "react",
     "create-react-app",
